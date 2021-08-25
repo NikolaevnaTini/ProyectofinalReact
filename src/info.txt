@@ -1,0 +1,38 @@
+https://fakestoreapi.com/docs
+
+
+//CONTADOR
+
+  /*const [contador,setContador] = useState(0)
+  
+
+const sumarContador = () =>{
+console.log ("Se ha agregado un producto al carrito")
+setContador(contador + 1)
+}
+
+const restarContador = () =>{
+  console.log ("Se ha quitado un producto del carrito")
+  setContador(contador - 1)
+  }
+*/
+
+
+//OTRA FORMA DE HACERLO - VISTO EN CLASE
+ /*const sumarContador = () =>{
+        if(contador < stock){
+            console.log ("Se ha agregado un producto al carrito")
+            setContador(contador + 1)
+        }
+    
+    }
+    
+    const restarContador = () =>{
+      console.log ("Se ha quitado un producto del carrito")
+      setContador(contador - 1)
+      }
+    const confirmar = () => {
+        console.log("compra confirmada")
+    }
+
+*/

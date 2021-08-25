@@ -1,0 +1,32 @@
+
+        [ {
+                "id": "1",
+                 "nombre":"Remera Gorila Vegano",
+                 "marca": "pepito", "precio":10,
+                 "stock":10, "categoria": "plantbased",
+                  "descripcion": "power plant",
+                    "imagen": "/images/gorivegan.jpg"},
+
+                   {
+                "id": "2",
+                 "nombre":"Remera Divertida",
+                 "marca": "don jose", "precio":10,
+                 "stock":10, "categoria": "divertido",
+                  "descripcion": "la mas comoda",
+                    "imagen": "/images/mick1.png"},
+                    {
+                        "id": "3",
+                         "nombre":"Remera Fachera",
+                         "marca": "pepito", "precio":15,
+                         "stock":10, "categoria": "divertido",
+                          "descripcion": "la mas linda",
+                            "imagen": "/images/osos.jpeg"},
+                            {
+                                "id": "4",
+                                 "nombre":"Remera Mamasauro",
+                                 "marca": "pepito", "precio":25,
+                                 "stock":10, "categoria": "plantbased",
+                                  "descripcion": "la mas comoda",
+                                    "imagen": "/images/mamasaurus.jpg"}]
+            
+            
