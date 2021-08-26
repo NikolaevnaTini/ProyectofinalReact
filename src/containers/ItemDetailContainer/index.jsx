@@ -26,4 +26,4 @@ export const ItemDetailContainer = () => {
            {productos && <ItemDetail item={productos.data()}/>}
         </div>
     )
-}
+}    
