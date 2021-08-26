@@ -3,11 +3,12 @@ import { ItemList } from '../../components/ItemList';
 import { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom';
 import {firestore} from '../../firebase'
+import Spinner from 'react-bootstrap/Spinner'
 
 export const ItemListContainer = () => {
     
     const { id } = useParams()
-    console.log(id)
+    const [estado, setEstado] = useState("pendiente");
     const [productos, setProductos] = useState([]);
      
     
@@ -20,36 +21,65 @@ export const ItemListContainer = () => {
       
         const collection = db.collection("items")
 
-        const query = collection.get()
+        if (id) {
 
-      
+
+          const filtro = collection.where("categoria", "==", id)
+          const query = filtro.get()
 
         query.then((resultados)=>{
 
-          const resultado_parseado = []
+          const resultados_parseado = []
 
           resultados.forEach((documento)=>{
             const id = documento.id
             const data = documento.data()
             const data_final = {id,...data}
-            console.log(data_final)
-            resultado_parseado.push(data_final)
-
-           
+            
+            resultados_parseado.push(data_final)
 
           })
 
-          setProductos(resultado_parseado)
+          setProductos(resultados_parseado)
+        }).finally(()=>{
+          setEstado("terminado")
         })
+      } else {
+        const query = collection.get();
+        query.then((resultados)=>{
+          const resultados_parseado = []
+
+          resultados.forEach((documento) => {
+            const id = documento.id
+          const data = documento.data()
+          const data_final = { id, ...data }
+          resultados_parseado.push(data_final)
+
+        })
+        setProductos(resultados_parseado)
+      }).finally(()=>{
+        setEstado("terminado")
+      });
+    }
 
 
   }, [id])
+  
+  if (estado === "pendiente") {
       
     return (
-       
-          <div>
+      <div className="container-fluid d-flex m-auto flex-column">
+      <Spinner animation="border" role="status" className="mx-auto mt-5">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
+    )
+  }
+  return(
+
+         <div>
           <ItemList product={productos}/>
         </div>
         
     )
-}
+  }

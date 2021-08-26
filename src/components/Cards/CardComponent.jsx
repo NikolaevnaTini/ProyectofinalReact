@@ -2,18 +2,19 @@ import { Link } from "react-router-dom";
 
 
 
-const CardComponent = ({id,name,description,price,image}) => {
+const CardComponent = ({categoryId,nombre,descripcion,precio,imagen}) => {
 
 
     
     return (
         <div className="col p-5">
         <div className="card container ">
-            <img src={image} className="card-img-top" alt="..."/>         <div className="card-title">{name}</div>
-            <p className="card-text">{description}</p>
-            <p className="card-text">{price}</p>
+            <img src={imagen} className="card-img-top" alt="..."/>         
+            <div className="card-title">{nombre}</div>
+            <p className="card-text">{descripcion}</p>
+            <p className="card-text">{precio}</p>
            
-            <Link to={"/description/" + id} className="btn btn-primary">Ver detalles</Link>
+            <Link to={"/description/" + categoryId} className="btn btn-primary">Ver detalles</Link>
             
         </div>
         </div>
