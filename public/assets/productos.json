@@ -1,11 +1,14 @@
 
         [ {
-                "id": "1",
+
+          "categoria": "plantbased",
+                "categoryId": "1",
+                "descripcion": "power plant",
+                "imagen": "/images/gorivegan.jpg",
+                "marca": "pepito",
                  "nombre":"Remera Gorila Vegano",
-                 "marca": "pepito", "precio":10,
-                 "stock":10, "categoria": "plantbased",
-                  "descripcion": "power plant",
-                    "imagen": "/images/gorivegan.jpg"},
+                  "precio":10,
+                 "stock":10 },
 
                    {
                 "id": "2",
