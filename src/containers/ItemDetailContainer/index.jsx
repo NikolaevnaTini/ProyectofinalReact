@@ -49,7 +49,7 @@ export const ItemDetailContainer = () => {
     }
       
     return (
-        <div>
+        <div className="m-auto">
            {productos && <ItemDetail productos={productos}/>}
         </div>
     )
