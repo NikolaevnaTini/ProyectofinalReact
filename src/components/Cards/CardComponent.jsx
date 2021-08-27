@@ -7,8 +7,10 @@ const CardComponent = ({categoryId,nombre,descripcion,precio,imagen}) => {
 
     
     return (
-        <div className="col p-5">
-        <div className="card container ">
+
+        <div className="container">
+            <div className="container-fluid d-flex m-auto flex-column">
+        
             <img src={imagen} className="card-img-top" alt="..."/>         
             <div className="card-title">{nombre}</div>
             <p className="card-text">{descripcion}</p>

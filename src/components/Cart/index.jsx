@@ -11,21 +11,32 @@ export const CartComponent = () => {
         cart.length ? 
         
             <div>
+                
                 {cart.map(producto=>{
                 return (
-                <div key={producto.id}>
-                    <h2>{producto.nombre}</h2>
-                    <p>{producto.precio * producto.cantidad}</p>
-                    <p>{producto.cantidad}</p>
+                    <div className="container">
+                <div className="container-fluid d-flex m-auto flex-column" key={producto.id}>
+                    <h2>Productos agregados al carrito:</h2>
+                    <h3>Camiseta: {producto.nombre}</h3>
+                    <p>Precio por camiseta: ${producto.precio}</p>
+                    <p>Cantidad de camisetas seleccionadas: {producto.cantidad}</p>
+                    <p>Subtotal: ${producto.precio * producto.cantidad}</p>
+                    
                     <img src={producto.imagen} alt="productoNombre"/>
                     <button onClick={()=>removeItem(producto.id)}>X</button>
-            </div>
+                </div>
+                </div>
+              
+
             )
         })}
-        <div>{subTotal()}</div>
-            <button onClick={clear}>Vaciar Carrito</button>
+        
+            <div className="container">Total de compra: ${subTotal()}</div>
+            <div className="container">
+                <button onClick={clear}>Vaciar Carrito</button></div>
             </div>
             :
-            <div><Link to="/">Seguir comprando </Link></div>
+            <div className="container"><Link to="/">Seguir comprando </Link></div>
+            
     )
     }

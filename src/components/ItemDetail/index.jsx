@@ -10,17 +10,19 @@ const onAdd =(cantidad) => {
    
 }
     return (
-        <div>
-          <p>{productos.nombre}</p>
+        <div className="container">
+            <div className="container-fluid d-flex m-auto flex-column">
+          <p>Camiseta : {productos.nombre}</p>
             <img src={productos.imagen} alt={productos.nombre}/>
-            <p>{productos.precio}</p>
-            <p>{productos.stock}</p>
-            <p>{productos.descripcion}</p>
+            <p>Precio: ${productos.precio}</p>
+            <p>Stock: {productos.stock} unidades</p>
+            <p>Descripcion: {productos.descripcion}</p>
             {itemAgregado ? 
             <div><Link to='/cart'><button>Ir al Carrito</button></Link></div>
                 : 
             <ItemCount onAdd={onAdd} producto={productos}/>}           
-        </div>
+            </div>
+        </div> 
     )
 }
 

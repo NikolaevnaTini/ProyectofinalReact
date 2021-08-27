@@ -18,7 +18,7 @@ export const ItemCount = ({producto,onAdd}) => {
     }
 
     return (
-        <div>
+        <div className="container">
             <button onClick={onSubstract}>-</button>
             <input type="text" value={initial}/>
             <button onClick={sumar}>+</button>

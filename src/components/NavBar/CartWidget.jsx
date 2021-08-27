@@ -11,7 +11,7 @@ export const CartWidget = () => {
         return (acumulador += (item.cantidad))
       },0)
     return(
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-warning">
             <FontAwesomeIcon icon={ faShoppingCart } className="iconoCarrito"/>
             <span className={cart.length? "badge bg-secondary" : "d-none"}>{cantidadesCarrito}</span>
         </button>

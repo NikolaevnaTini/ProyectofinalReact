@@ -15,8 +15,8 @@ export const NavBar = () => {
                         <li className="nav-item"><a className="nav-link active" aria-current="page" href="/">Home</a></li>
                         <li className="nav-item dropdown"><a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link to="/category/divertido" className="dropdown-item">Remeras Divertidas</Link></li>
-                                <li><Link to="/category/plantbased" className="dropdown-item">Remeras PlantBased</Link></li>
+                                <li><Link to="/category/divertido" className="dropdown-item">Camisetas Divertidas</Link></li>
+                                <li><Link to="/category/plantbased" className="dropdown-item">Camisetas PlantBased</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item"><Link to="/cart"className="nav-link"> <CartWidget /></Link></li>

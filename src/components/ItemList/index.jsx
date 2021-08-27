@@ -4,9 +4,12 @@ import { Item } from "../Item";
 export const ItemList = ({product}) => {
 
     return (
-        <div>
+        <div className="container">
+            
+            
         {product.map((element) =>
         <Item key={element.id} productData ={element}/>
+        
         )}
         </div>
     )

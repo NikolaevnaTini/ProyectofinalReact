@@ -49,8 +49,10 @@ export const ItemDetailContainer = () => {
     }
       
     return (
-        <div className="m-auto">
+      <div className="container">
+        <div className="container-fluid d-flex m-auto flex-column">
            {productos && <ItemDetail productos={productos}/>}
         </div>
+      </div>
     )
 }

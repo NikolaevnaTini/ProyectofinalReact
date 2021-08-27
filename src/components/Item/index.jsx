@@ -13,12 +13,16 @@ export const Item = ({productData}) => {
     }
 
     return (
-        <div className="card">
+        <div className="container">
+            <div className="container-fluid d-flex m-auto flex-column">
+             <div className="card">
             <h1>{productData.nombre}</h1>
             <img src={productData.imagen} alt="imagen"/>
             <p>${productData.precio}</p>
             <ItemCount producto={productData} onAdd={onAdd} />
             <Link to={`/item/${productData.id}`} className="btn btn-secondary" >Ver más</Link>
+            </div>
+        </div>
         </div>
     )
 }
