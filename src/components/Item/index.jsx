@@ -12,17 +12,21 @@ export const Item = ({productData}) => {
        
     }
 
+    // container-fluid d-flex m-auto flex-column
     return (
-        <div className="container">
-            <div className="container-fluid d-flex m-auto flex-column">
-             <div className="card">
-            <h1>{productData.nombre}</h1>
-            <img src={productData.imagen} alt="imagen"/>
-            <p>${productData.precio}</p>
-            <ItemCount producto={productData} onAdd={onAdd} />
-            <Link to={`/item/${productData.id}`} className="btn btn-secondary" >Ver más</Link>
+        <div className="container container-fluid mr-auto p-3">
+            {/* Iniciamos el cuadro */}
+            <div className="row"> 
+                {/* Iniciar las columnas */}
+                <div className="card">
+                    <h1>{productData.nombre}</h1>
+                    <img src={productData.imagen} className='img-fluid' alt="imagen"/>
+                    <p>${productData.precio}</p>
+
+                    <ItemCount producto={productData} onAdd={onAdd} />
+                    <Link to={`/item/${productData.id}`} className="btn btn-outline-warning" >Ver más</Link>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

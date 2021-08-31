@@ -5,6 +5,7 @@ import { ItemListContainer } from "./containers/ItemListContainer"
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import {CartContextComponent} from './context/CartContext';
 import { CartComponent } from './components/Cart';
+import Footer from './components/Footer/Footer';
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
             </Switch>   
         </BrowserRouter>
       </CartContextComponent>
+      <Footer/>
     </div>
   );
 }

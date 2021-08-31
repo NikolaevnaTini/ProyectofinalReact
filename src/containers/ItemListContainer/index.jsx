@@ -5,6 +5,7 @@ import {useParams} from 'react-router-dom';
 import {firestore} from '../../firebase'
 import Spinner from 'react-bootstrap/Spinner'
 import './estilos.css'
+import Retro from './RetroTitle/Retro';
 
 export const ItemListContainer = () => {
     
@@ -77,14 +78,12 @@ export const ItemListContainer = () => {
     )
   }
   return(
-      <div className="container">
+      <div className="ss">
+        <Retro/>
          <div className="container-fluid d-flex m-auto flex-column">
-         <div class="lines"></div>
-            <h1 className="catalogo"><span>Nuestro Catalogo</span> </h1>
-           
+            <h1 className="catalogo"><span></span> </h1>
           <ItemList product={productos}/>
         </div>
-        </div>
-        
+      </div> 
     )
   }
