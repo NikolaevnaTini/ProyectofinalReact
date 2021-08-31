@@ -10,6 +10,7 @@ const CardComponent = ({categoryId,nombre,descripcion,precio,imagen}) => {
 
         <div className="container">
             <div className="container-fluid d-flex m-auto flex-column">
+                <div className="row">
                 
                 <img src={imagen} className="card card-img-top" alt="..."/>         
                 <div className="card-title">{nombre}</div>
@@ -17,6 +18,7 @@ const CardComponent = ({categoryId,nombre,descripcion,precio,imagen}) => {
                 <p className="card-text">{precio}</p>
                 
                 <Link to={"/description/" + categoryId} className="btn btn-primary">Ver detalles</Link>
+                </div>
             </div>
         </div>
         

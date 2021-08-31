@@ -2,6 +2,7 @@ import { useState, useContext } from 'react'
 import firebase from "firebase/app";
 import { firestore } from '../../firebase'
 import { CartContext } from '../../context/CartContext';
+import { Button, Form } from 'react-bootstrap';
 
 
     const CheckOut = () =>{
@@ -12,9 +13,10 @@ import { CartContext } from '../../context/CartContext';
         const [ phone, setPhone ] = useState("")
         const [ email, setEmail ] = useState("")
     
-        function submitOrder(){
+        
+        function submitOrder(e){
     
-            
+            e.preventDefault()
             const db = firestore
             const orders = db.collection('orders')
     
@@ -26,7 +28,7 @@ import { CartContext } from '../../context/CartContext';
             }
             orders.add(order)
             .then(({ id }) => alert("Anotá el id de tu compra " + id))
-            .catch((error) => console.log(error))
+            .catch((error) => alert(error))
         }
     
 
@@ -36,17 +38,15 @@ return(
 
 
 
-<form noValidate autoComplete="off">
-<input id="standard-basic" placeholder="Name" value={name} 
-onChange={(e) => setName(e.target.value)} />
-<input id="standard-basic"  placeholder="Telephone" value={phone} 
-onChange={(e) => setPhone(e.target.value)} />
-<input id="standard-basic"  placeholder="Email" value={email} 
-onChange={(e) => setEmail(e.target.value)} />
-<button onClick={submitOrder}>
-       Terminar Compra
-  </button>
-</form>
+    <Form onSubmit={submitOrder}>
+    <Form.Control id="standard-basic" placeholder="Name" value={name} 
+    onChange={(e) => setName(e.target.value)} />
+    <Form.Control id="standard-basic"  placeholder="Telephone" value={phone} 
+    onChange={(e) => setPhone(e.target.value)} />
+    <Form.Control id="standard-basic"  placeholder="Email" value={email} 
+    onChange={(e) => setEmail(e.target.value)} />
+    <Button type='submit' value='Terminar compra'>Terminar</Button>
+    </Form>
 
 
 
@@ -56,5 +56,3 @@ onChange={(e) => setEmail(e.target.value)} />
     }
 
     export default CheckOut
-
-
