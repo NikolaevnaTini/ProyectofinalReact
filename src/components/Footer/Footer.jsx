@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer className="page-footer font-small blue">
         <div className="footer-copyright text-center py-3">© 2020 Copyright:
-          <a href="#"> larastore.com</a>
+          <a href="#"> Larastore.com</a>
         </div>
       </footer>
     </div>
